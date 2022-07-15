@@ -102,3 +102,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+
+
+
+# custom
+part1/*
+!part1/src/*
