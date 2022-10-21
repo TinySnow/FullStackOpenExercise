@@ -29,7 +29,7 @@ const Total = (props) => {
 const App = () => {
 
   const course = {
-    name: 'App_5',
+    name: 'App5',
     parts: [
       {
         name: 'Fundamentals of React',
