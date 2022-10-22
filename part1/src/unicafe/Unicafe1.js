@@ -1,18 +1,42 @@
 import { useState } from 'react'
-const FeedBack = (props) => {
 
+const Button = (props) => {
+    return (
+        <button onClick={props.click}>{props.text}</button>
+    )
+}
+
+const FeedBack = (props) => {
+    const { good, neutral, bad } = props.count
+    const { setGood, setNeutral, setBad } = props.method
     return (
         <>
             <h1>Give feedback</h1>
-            <button />
-            <button />
-            <button />
+            <Button click={() => setGood(good + 1)} text="good" />
+            <Button click={() => setNeutral(neutral + 1)} text="neutral" />
+            <Button click={() => setBad(bad + 1)} text="bad" />
         </>
     )
 }
 
-const Statistics = () => {
+const Show = (props) => {
+    return (
+        <>
+            {props.level} {props.count}<br />
+        </>
+    )
+}
 
+const Statistics = (props) => {
+    const { good, neutral, bad } = props.count
+    return (
+        <>
+            <h1>Statistics</h1>
+            <Show level="good" count={good} />
+            <Show level="neutral" count={neutral} />
+            <Show level="bad" count={bad} />
+        </>
+    )
 }
 
 const App = () => {
@@ -21,10 +45,22 @@ const App = () => {
     const [neutral, setNeutral] = useState(0)
     const [bad, setBad] = useState(0)
 
+    const count = {
+        good: good,
+        neutral: neutral,
+        bad: bad
+    }
+
+    const method = {
+        setGood: setGood,
+        setNeutral: setNeutral,
+        setBad: setBad
+    }
+
     return (
         <div>
-            <FeedBack />
-            <Statistics />
+            <FeedBack method={method} count={count} />
+            <Statistics count={count} />
         </div>
     )
 }
