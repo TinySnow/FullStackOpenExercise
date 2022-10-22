@@ -26,7 +26,7 @@ const FeedBack = (props) => {
 const Show = (props) => {
     return (
         <>
-            {props.level} {props.count}<br />
+        {props.value}
         </>
     )
 }
@@ -46,12 +46,34 @@ const Statistics = (props) => {
     else return (
         <>
             <h1>Statistics</h1>
-            <Show level="good" count={good} />
-            <Show level="neutral" count={neutral} />
-            <Show level="bad" count={bad} />
-            <Show level="all" count={all} />
-            <Show level="average" count={average} />
-            <Show level="positive" count={toPercent(positive)} />
+            <table>
+                <tbody>
+                    <tr>
+                        <td><Show value="good"/></td>
+                        <td><Show value={good}/></td> 
+                    </tr>
+                    <tr>
+                        <td><Show value="neutral"/></td>
+                        <td><Show value={neutral}/></td> 
+                    </tr>
+                    <tr>
+                        <td><Show value="bad"/></td>
+                        <td><Show value={bad}/></td> 
+                    </tr>
+                    <tr>
+                        <td><Show value="all"/></td>
+                        <td><Show value={all}/></td> 
+                    </tr>
+                    <tr>
+                        <td><Show value="average"/></td>
+                        <td><Show value={average}/></td> 
+                    </tr>
+                    <tr>
+                        <td><Show value="positive"/></td>
+                        <td><Show value={toPercent(positive)}/></td>
+                    </tr>
+                </tbody>
+            </table>
         </>
     )
 }
