@@ -23,10 +23,10 @@ const FeedBack = (props) => {
     )
 }
 
-const StatisticLine = (props) => {
+const Show = (props) => {
     return (
         <>
-            {props.level} {props.count}<br />
+        {props.value}
         </>
     )
 }
@@ -46,12 +46,34 @@ const Statistics = (props) => {
     else return (
         <>
             <h1>Statistics</h1>
-            <StatisticLine level="good" count={good} />
-            <StatisticLine level="neutral" count={neutral} />
-            <StatisticLine level="bad" count={bad} />
-            <StatisticLine level="all" count={all} />
-            <StatisticLine level="average" count={average} />
-            <StatisticLine level="positive" count={toPercent(positive)} />
+            <table>
+                <tbody>
+                    <tr>
+                        <td><Show value="good"/></td>
+                        <td><Show value={good}/></td> 
+                    </tr>
+                    <tr>
+                        <td><Show value="neutral"/></td>
+                        <td><Show value={neutral}/></td> 
+                    </tr>
+                    <tr>
+                        <td><Show value="bad"/></td>
+                        <td><Show value={bad}/></td> 
+                    </tr>
+                    <tr>
+                        <td><Show value="all"/></td>
+                        <td><Show value={all}/></td> 
+                    </tr>
+                    <tr>
+                        <td><Show value="average"/></td>
+                        <td><Show value={average}/></td> 
+                    </tr>
+                    <tr>
+                        <td><Show value="positive"/></td>
+                        <td><Show value={toPercent(positive)}/></td>
+                    </tr>
+                </tbody>
+            </table>
         </>
     )
 }
