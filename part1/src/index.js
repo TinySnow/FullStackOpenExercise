@@ -13,6 +13,8 @@ import Unicafe2 from './unicafe/Unicafe2'
 import Unicafe3 from './unicafe/Unicafe3'
 import Unicafe4 from './unicafe/Unicafe4'
 import Unicafe5 from './unicafe/Unicafe5'
+import AnecdotesInit from './anecdotes/Init'
+import Anecdotes1 from './anecdotes/App1'
 
 ReactDOM.createRoot(document.getElementById('course-info-init')).render(<CourseInfoInit />)
 ReactDOM.createRoot(document.getElementById('one')).render(<App1 />)
@@ -26,3 +28,5 @@ ReactDOM.createRoot(document.getElementById('seven')).render(<Unicafe2 />)
 ReactDOM.createRoot(document.getElementById('eight')).render(<Unicafe3 />)
 ReactDOM.createRoot(document.getElementById('nine')).render(<Unicafe4 />)
 ReactDOM.createRoot(document.getElementById('ten')).render(<Unicafe5 />)
+ReactDOM.createRoot(document.getElementById('eleven')).render(<AnecdotesInit />)
+ReactDOM.createRoot(document.getElementById('twelve')).render(<Anecdotes1 />)
